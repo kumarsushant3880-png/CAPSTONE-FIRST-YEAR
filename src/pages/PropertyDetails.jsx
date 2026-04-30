@@ -4,6 +4,7 @@ import LocationMap from '../components/LocationMap'
 import Navbar from '../components/Navbar'
 import { useProperties } from '../context/propertyStore'
 import { getPropertyById } from '../services/propertyApi'
+import { getAreaLabel, getBathLabel, getBhkLabel } from '../utils/propertyLabels'
 
 function PropertyDetails() {
   const { id } = useParams()
@@ -77,9 +78,9 @@ function PropertyDetails() {
           <h2>Rs. {property.price.toLocaleString()}</h2>
 
           <div className="property-info">
-            <span>{property.bedrooms} Beds</span>
-            <span>{property.bathrooms} Baths</span>
-            <span>{property.area} sq ft</span>
+            <span className="primary-chip">{getBhkLabel(property)}</span>
+            <span>{getBathLabel(property.bathrooms)}</span>
+            <span>{getAreaLabel(property.area)}</span>
             <span>{property.status}</span>
             <span>{property.type}</span>
           </div>

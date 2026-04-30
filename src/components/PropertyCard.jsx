@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useProperties } from '../context/propertyStore'
+import { getAreaLabel, getBathLabel, getBhkLabel } from '../utils/propertyLabels'
 
 function PropertyCard({ property }) {
   const { savedProperties, toggleSaveProperty } = useProperties()
@@ -7,7 +8,10 @@ function PropertyCard({ property }) {
 
   return (
     <div className="property-card">
-      <img src={property.image} alt={property.title} />
+      <div className="property-media">
+        <img src={property.image} alt={property.title} />
+        <span>{property.location}</span>
+      </div>
 
       <div className="property-card-content">
         <span className="status-badge">{property.status}</span>
@@ -15,9 +19,9 @@ function PropertyCard({ property }) {
         <p>{property.address}</p>
 
         <div className="property-info">
-          <span>{property.bedrooms} Beds</span>
-          <span>{property.bathrooms} Baths</span>
-          <span>{property.area} sq ft</span>
+          <span className="primary-chip">{getBhkLabel(property)}</span>
+          <span>{getBathLabel(property.bathrooms)}</span>
+          <span>{getAreaLabel(property.area)}</span>
           <span>{property.type}</span>
         </div>
 

@@ -9,6 +9,9 @@ function FilterBar({
   setSelectedType,
   sortBy,
   setSortBy,
+  onResetFilters,
+  locations,
+  propertyTypes,
 }) {
   return (
     <div className="filter-bar">
@@ -24,9 +27,11 @@ function FilterBar({
         onChange={(event) => setSelectedLocation(event.target.value)}
       >
         <option value="All">All Locations</option>
-        <option value="Delhi">Delhi</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Bangalore">Bangalore</option>
+        {locations.map((location) => (
+          <option key={location} value={location}>
+            {location}
+          </option>
+        ))}
       </select>
 
       <select
@@ -34,10 +39,11 @@ function FilterBar({
         onChange={(event) => setSelectedType(event.target.value)}
       >
         <option value="All">All Types</option>
-        <option value="Apartment">Apartment</option>
-        <option value="Villa">Villa</option>
-        <option value="House">House</option>
-        <option value="Studio">Studio</option>
+        {propertyTypes.map((type) => (
+          <option key={type} value={type}>
+            {type}
+          </option>
+        ))}
       </select>
 
       <select
@@ -49,6 +55,7 @@ function FilterBar({
         <option value="6000000-9000000">Rs. 60 Lakh - Rs. 90 Lakh</option>
         <option value="9000000-12000000">Rs. 90 Lakh - Rs. 1.2 Crore</option>
         <option value="12000000-16000000">Rs. 1.2 Crore - Rs. 1.6 Crore</option>
+        <option value="16000000-25000000">Rs. 1.6 Crore - Rs. 2.5 Crore</option>
       </select>
 
       <select value={sortBy} onChange={(event) => setSortBy(event.target.value)}>
@@ -57,6 +64,10 @@ function FilterBar({
         <option value="priceHigh">Price: High to Low</option>
         <option value="areaHigh">Area: Largest First</option>
       </select>
+
+      <button className="reset-filter-btn" type="button" onClick={onResetFilters}>
+        Reset
+      </button>
     </div>
   )
 }

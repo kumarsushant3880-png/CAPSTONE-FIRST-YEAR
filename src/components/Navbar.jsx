@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useProperties } from '../context/propertyStore'
 
 function Navbar() {
@@ -6,15 +6,20 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h2>EstateHub</h2>
+      <Link className="brand-mark" to="/">
+        <span>EstateHub</span>
+        <small>Premium Realty</small>
+      </Link>
 
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/">Properties</Link>
-        <Link to="/saved">Saved</Link>
-        <Link to="/enquiries">Enquiries</Link>
+        <a href="/#properties">Listings</a>
+        <a href="/#markets">Locations</a>
+        <a href="/#services">Services</a>
+        <NavLink to="/saved">Saved</NavLink>
+        <NavLink to="/enquiries">Leads</NavLink>
         <button className="theme-toggle" type="button" onClick={toggleTheme}>
-          {theme === 'light' ? 'Dark' : 'Light'}
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
         </button>
       </div>
     </nav>

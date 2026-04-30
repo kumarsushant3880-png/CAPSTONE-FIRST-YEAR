@@ -1,6 +1,6 @@
 # EstateHub - Real Estate Platform UI
 
-EstateHub is a React-based real estate platform UI made for the capstone project. It allows users to browse properties, filter listings by price and location, open a property detail page, view property maps, save homes, and manage buyer enquiries.
+EstateHub is a professional React-based real estate platform UI made for the capstone project. It allows users to browse premium property listings, filter by budget and location, open a property detail page, view property maps, save homes, and manage buyer enquiries.
 
 ## Problem Definition
 
@@ -19,8 +19,9 @@ People searching for homes often need a simple interface where they can compare 
 
 ## Key Features
 
-- Property listings with images, price, location, area, bedrooms, and status
+- 18 property listings with images, price, location, area, bedrooms, and status
 - Filters for search, city, property type, price range, and sort order
+- Professional homepage with hero section, market cards, service cards, and stats
 - Property detail page for each listing
 - Save or remove properties from the saved list with localStorage persistence
 - Enquiry form on the property detail page
@@ -28,6 +29,7 @@ People searching for homes often need a simple interface where they can compare 
 - Property location map on each detail page
 - Dark mode toggle
 - Pagination for property listings
+- Hover, active, and card interaction effects
 - Responsive layout for desktop and mobile screens
 
 ## Requirement Mapping
@@ -88,7 +90,7 @@ http://localhost:5173/
 
 ## Viva Explanation
 
-This project is a real estate platform UI built using React. It contains property listing cards, filters for price range, location, type, and search, sorting options, pagination, property detail pages, saved properties, an enquiry form, an enquiry management page, dark mode, and location maps. I used the Fetch API through a separate service file to load property data from a JSON endpoint, Google Maps Embed API for property locations, React Router for navigation, Context API with `useReducer` for shared app state, and localStorage so saved homes, theme, and enquiries stay available after refreshing the page.
+This project is a professional real estate platform UI built using React. It contains a premium homepage, property listing cards, filters for price range, location, type, and search, sorting options, pagination, property detail pages, saved properties, an enquiry form, an enquiry management page, dark mode, hover interactions, and location maps. I used the Fetch API through a separate service file to load property data from a JSON endpoint, Google Maps Embed API for property locations, React Router for navigation, Context API with `useReducer` for shared app state, and localStorage so saved homes, theme, and enquiries stay available after refreshing the page.
 
 ## API Key Note
 

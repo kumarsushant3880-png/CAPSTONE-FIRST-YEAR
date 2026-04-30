@@ -2,7 +2,9 @@ const PROPERTIES_URL = '/api/properties.json'
 const ENQUIRIES_KEY = 'propertyEnquiries'
 
 export async function getProperties() {
-  const response = await fetch(PROPERTIES_URL)
+  const response = await fetch(`${PROPERTIES_URL}?updated=${Date.now()}`, {
+    cache: 'no-store',
+  })
 
   if (!response.ok) {
     throw new Error('Unable to load properties from API.')
